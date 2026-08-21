@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mytoolkit.com/sitemap.xml
+Sitemap: https://vercel.com/karthi06sk-8826s-projects/sitemap.xml
