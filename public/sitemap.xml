@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+  <url>
+    <loc>https://mytoolkit.com/</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/gst-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/emi-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/age-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/percentage-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/salary-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/loan-calculator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/date-difference</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/time-difference</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/pdf-merge</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/pdf-split</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/image-compress</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/image-resize</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/jpg-to-png</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/png-to-jpg</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/json-formatter</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/json-validator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/base64-encoder</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/url-encoder</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/password-generator</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/about</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/privacy-policy</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/terms</loc>
+  </url>
+
+  <url>
+    <loc>https://mytoolkit.com/contact</loc>
+  </url>
+
+</urlset>
