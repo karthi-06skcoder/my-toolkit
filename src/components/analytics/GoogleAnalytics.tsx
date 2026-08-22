@@ -1,15 +1,5 @@
 import { useEffect } from "react";
 
-declare global {
-  interface Window {
-    dataLayer: unknown[];
-    gtag?: (
-      command: string,
-      ...args: unknown[]
-    ) => void;
-  }
-}
-
 function GoogleAnalytics() {
   const measurementId =
     import.meta.env.VITE_GA_MEASUREMENT_ID;
