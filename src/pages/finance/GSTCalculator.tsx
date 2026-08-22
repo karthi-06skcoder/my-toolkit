@@ -8,7 +8,7 @@ import SEO from "../../components/common/SEO";
 import StructuredData from "../../components/common/StructuredData";
 import ToolInfoSection from "../../components/tool/ToolInfoSection";
 
-import { trackEvent } from "../../utils/analytics";
+// import { trackEvent } from "../../utils/analytics";
 import { trackToolUsage } from "../../utils/analytics";
 
 type CalculationType = "exclusive" | "inclusive";
@@ -46,10 +46,7 @@ function GSTCalculator() {
     const sgst = taxType === "intra" ? gstAmount / 2 : 0;
     const igst = taxType === "inter" ? gstAmount : 0;
 
-    trackToolUsage(
-      "gst_calculator",
-      "calculator"
-    );
+    
 
     return {
       taxableAmount,
@@ -60,6 +57,11 @@ function GSTCalculator() {
       igst,
     };
   }, [amount, gstRate, calculationType, taxType]);
+
+  trackToolUsage(
+    "gst_calculator",
+    "calculator"
+  );
 
   const formatCurrency = (value: number) => {
     return new Intl.NumberFormat("en-IN", {
@@ -75,16 +77,6 @@ function GSTCalculator() {
     setCalculationType("exclusive");
     setTaxType("intra");
   };
-
-  trackEvent(
-    "tool_used",
-    {
-      tool_name:
-        "gst_calculator",
-      tool_category:
-        "calculator",
-    }
-  );
 
   return (
     <ToolLayout>
