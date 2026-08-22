@@ -37,6 +37,11 @@ function SEO({
         content="index, follow"
       />
 
+      <meta
+        name="google-site-verification"
+        content="ARGQZG8E2MbP_zOg69Zd3PFQ4Tb4qwb9GQ0D3eu9iWQ"
+      />
+
       <link
         rel="canonical"
         href={canonicalUrl}
