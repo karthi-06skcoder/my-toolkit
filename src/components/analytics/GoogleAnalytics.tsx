@@ -1,49 +1,58 @@
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    dataLayer: unknown[];
+    gtag?: (
+      command: string,
+      ...args: unknown[]
+    ) => void;
+  }
+}
+
 function GoogleAnalytics() {
   const measurementId =
     import.meta.env.VITE_GA_MEASUREMENT_ID;
 
   useEffect(() => {
     if (!measurementId) {
+      console.warn(
+        "Google Analytics Measurement ID is missing"
+      );
       return;
     }
 
-    if (
-      document.querySelector(
-        `script[src*="googletagmanager.com/gtag/js?id=${measurementId}"]`
-      )
-    ) {
-      return;
-    }
+    // Initialize dataLayer
+    window.dataLayer =
+      window.dataLayer || [];
 
-    const script =
-      document.createElement("script");
-
-    script.async = true;
-    script.src =
-      `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
-
-    document.head.appendChild(script);
-
-    const inlineScript =
-      document.createElement("script");
-
-    inlineScript.innerHTML = `
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', '${measurementId}');
-    `;
-
-    document.head.appendChild(
-      inlineScript
-    );
-
-    return () => {
-      script.remove();
-      inlineScript.remove();
+    // Define gtag directly on window
+    window.gtag = function (...args: unknown[]) {
+      window.dataLayer.push(args);
     };
+
+    // Send initial GA command
+    window.gtag("js", new Date());
+
+    window.gtag("config", measurementId);
+
+    // Load Google Analytics script only once
+    const existingScript =
+      document.querySelector(
+        `script[src*="googletagmanager.com/gtag/js"]`
+      );
+
+    if (!existingScript) {
+      const script =
+        document.createElement("script");
+
+      script.async = true;
+
+      script.src =
+        `https://www.googletagmanager.com/gtag/js?id=${measurementId}`;
+
+      document.head.appendChild(script);
+    }
   }, [measurementId]);
 
   return null;

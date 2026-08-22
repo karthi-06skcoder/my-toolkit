@@ -1,16 +1,6 @@
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
-declare global {
-  interface Window {
-    gtag?: (
-      command: string,
-      target: string,
-      config?: Record<string, unknown>
-    ) => void;
-  }
-}
-
 function AnalyticsTracker() {
   const location =
     useLocation();
