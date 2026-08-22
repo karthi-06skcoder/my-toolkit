@@ -12,21 +12,23 @@ function GoogleAnalytics() {
       return;
     }
 
-    // Initialize dataLayer
     window.dataLayer =
       window.dataLayer || [];
 
-    // Define gtag directly on window
     window.gtag = function (...args: unknown[]) {
       window.dataLayer.push(args);
     };
 
-    // Send initial GA command
-    window.gtag("js", new Date());
+    window.gtag(
+      "js",
+      new Date()
+    );
 
-    window.gtag("config", measurementId);
+    window.gtag(
+      "config",
+      measurementId
+    );
 
-    // Load Google Analytics script only once
     const existingScript =
       document.querySelector(
         `script[src*="googletagmanager.com/gtag/js"]`
