@@ -14,6 +14,7 @@ import ToolLayout from "../../components/tool/ToolLayout";
 import ToolHeader from "../../components/tool/ToolHeader";
 import ToolPanel from "../../components/tool/ToolPanel";
 import ResultPanel from "../../components/tool/ResultPanel";
+import { trackToolUsage } from "../../utils/analytics";
 
 function AgeCalculator() {
   const today = format(new Date(), "yyyy-MM-dd");
@@ -104,6 +105,11 @@ function AgeCalculator() {
     const nextBirthdayDay = format(
       nextBirthday,
       "EEEE"
+    );
+
+    trackToolUsage(
+      "age_calculator",
+      "calculator"
     );
     
 

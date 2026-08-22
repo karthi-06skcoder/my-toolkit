@@ -4,6 +4,7 @@ import ToolLayout from "../../components/tool/ToolLayout";
 import ToolHeader from "../../components/tool/ToolHeader";
 import ToolPanel from "../../components/tool/ToolPanel";
 import ResultPanel from "../../components/tool/ResultPanel";
+import { trackToolUsage } from "../../utils/analytics";
 
 function LoanCalculator() {
   const [loanAmount, setLoanAmount] = useState("1000000");
@@ -45,6 +46,11 @@ function LoanCalculator() {
 
     const totalPayment = monthlyEMI * months;
     const totalInterest = totalPayment - principal;
+
+    trackToolUsage(
+      "loan_calculator",
+      "calculator"
+    );
 
     return {
       principal,

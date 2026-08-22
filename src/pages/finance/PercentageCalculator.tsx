@@ -4,6 +4,7 @@ import ToolLayout from "../../components/tool/ToolLayout";
 import ToolHeader from "../../components/tool/ToolHeader";
 import ToolPanel from "../../components/tool/ToolPanel";
 import ResultPanel from "../../components/tool/ResultPanel";
+import { trackToolUsage } from "../../utils/analytics";
 
 type Mode =
   | "percentage-of"
@@ -67,6 +68,11 @@ function PercentageCalculator() {
         suffix: "%",
       };
     }
+
+    trackToolUsage(
+      "percentage_calculator",
+      "calculator"
+    );
 
     return null;
   }, [firstValue, secondValue, mode]);

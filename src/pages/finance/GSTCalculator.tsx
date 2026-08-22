@@ -9,6 +9,7 @@ import StructuredData from "../../components/common/StructuredData";
 import ToolInfoSection from "../../components/tool/ToolInfoSection";
 
 import { trackEvent } from "../../utils/analytics";
+import { trackToolUsage } from "../../utils/analytics";
 
 type CalculationType = "exclusive" | "inclusive";
 type TaxType = "intra" | "inter";
@@ -44,6 +45,11 @@ function GSTCalculator() {
     const cgst = taxType === "intra" ? gstAmount / 2 : 0;
     const sgst = taxType === "intra" ? gstAmount / 2 : 0;
     const igst = taxType === "inter" ? gstAmount : 0;
+
+    trackToolUsage(
+      "gst_calculator",
+      "calculator"
+    );
 
     return {
       taxableAmount,

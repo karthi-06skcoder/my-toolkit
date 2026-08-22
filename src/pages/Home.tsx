@@ -11,6 +11,7 @@ import {
 import ToolCard from "../components/tool/ToolCard";
 import SEO from "../components/common/SEO";
 import AdSlot from "../components/ads/AdSlot";
+import { trackToolSearch } from "../utils/analytics";
 
 function Home() {
   const [search, setSearch] =
@@ -48,12 +49,15 @@ function Home() {
               .toLowerCase()
               .includes(searchValue);
 
+          trackToolSearch(searchValue);
+
           return (
             matchesCategory &&
             matchesSearch
           );
         }
       );
+      
     }, [
       search,
       activeCategory,

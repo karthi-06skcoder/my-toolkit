@@ -7,6 +7,8 @@ import ResultPanel from "../../components/tool/ResultPanel";
 
 import SEO from "../../components/common/SEO";
 
+import { trackToolUsage } from "../../utils/analytics";
+
 type EMIResult = {
   monthlyEMI: number;
   totalInterest: number;
@@ -51,6 +53,11 @@ function EMICalculator() {
 
     const totalPayment = monthlyEMI * months;
     const totalInterest = totalPayment - principal;
+
+    trackToolUsage(
+      "emi_calculator",
+      "calculator"
+    );
 
     return {
       monthlyEMI,

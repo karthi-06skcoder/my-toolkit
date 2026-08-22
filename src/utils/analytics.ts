@@ -18,3 +18,25 @@ export const trackEvent = (
     parameters
   );
 };
+
+export const trackToolUsage = (
+  toolName: string,
+  toolCategory: string
+) => {
+  trackEvent("tool_used", {
+    tool_name: toolName,
+    tool_category: toolCategory,
+  });
+};
+
+export const trackToolSearch = (
+  searchTerm: string
+) => {
+  if (!searchTerm.trim()) {
+    return;
+  }
+
+  trackEvent("tool_search", {
+    search_term: searchTerm.trim(),
+  });
+};
