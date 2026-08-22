@@ -36,6 +36,7 @@ import NotFound from "./pages/NotFound";
 
 import GoogleAnalytics from "./components/analytics/GoogleAnalytics";
 import AnalyticsTracker from "./components/analytics/AnalyticsTracker";
+import Disclaimer from "./pages/Disclaimer";
 
 function App() {
   return (
@@ -75,6 +76,8 @@ function App() {
         <Route path="/terms" element={<Terms />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
+
+        <Route path="/disclaimer" element={<Disclaimer />} />
 
         <Route path="*" element={<NotFound />} />
       </Routes>
