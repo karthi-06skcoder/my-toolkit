@@ -33,9 +33,7 @@ function GoogleAnalytics() {
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-      gtag('config', '${measurementId}', {
-        send_page_view: false
-      });
+      gtag('config', '${measurementId}');
     `;
 
     document.head.appendChild(
